@@ -92,12 +92,13 @@ struct scom_interrupt {
  */
 struct mbox_access {
 	__u32 data;
-	__u8 reg;
+	__u32 reg;
 };
 
 struct mbox_access_rmw {
 	__u32 mask;
 	struct mbox_access access;
+	__u32 rsvd;
 };
 
 #define FSI_MBOX_READ	_IOWR('s', 0x00, struct mbox_access)

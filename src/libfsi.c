@@ -38,7 +38,7 @@ int fsi_mbox_reg_read(int fd, uint32_t reg, uint32_t *data)
 	struct mbox_access ma;
 	int rc;
 
-	ma.reg = (__u8)reg;
+	ma.reg = reg;
 	rc = ioctl(fd, FSI_MBOX_READ, &ma);
 	if (rc < 0)
 		return -errno;
@@ -53,7 +53,7 @@ int fsi_mbox_reg_rmw(int fd, uint32_t reg, uint32_t data, uint32_t mask)
 	int rc;
 
 	ma.mask = mask;
-	ma.access.reg = (__u8)reg;
+	ma.access.reg = reg;
 	ma.access.data = data;
 	rc = ioctl(fd, FSI_MBOX_RMW, &ma);
 	if (rc < 0)
@@ -67,7 +67,7 @@ int fsi_mbox_reg_write(int fd, uint32_t reg, uint32_t data)
 	struct mbox_access ma;
 	int rc;
 
-	ma.reg = (__u8)reg;
+	ma.reg = reg;
 	ma.data = data;
 	rc = ioctl(fd, FSI_MBOX_WRITE, &ma);
 	if (rc < 0)
