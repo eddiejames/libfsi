@@ -96,8 +96,8 @@ struct mbox_access {
 };
 
 struct mbox_access_rmw {
-	__u32 mask;
 	struct mbox_access access;
+	__u32 mask;
 	__u32 rsvd;
 };
 
