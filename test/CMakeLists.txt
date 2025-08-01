@@ -5,3 +5,6 @@ target_link_libraries(testscom fsi)
 
 add_executable(testmbox testmbox.cpp)
 target_link_libraries(testmbox fsi)
+
+add_executable(mboxdump mboxdump.cpp)
+target_link_libraries(mboxdump fsi)
